@@ -2,7 +2,6 @@
 package main // import "github.com/nicewook/go_modules_test"
 
 import (
-	"fmt"
 	"net/http"
 	"os"
 
@@ -18,7 +17,8 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		fmt.Errorf("$PORT not set")
+		port = "1323"
 	}
-	e.Logger.Fatal(e.Start(port))
+	portString = ":" + port
+	e.Logger.Fatal(e.Start(portString))
 }
