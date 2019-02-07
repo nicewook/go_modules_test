@@ -19,6 +19,6 @@ func main() {
 	if port == "" {
 		port = "1323"
 	}
-	portString = ":" + port
+	portString := ":" + port
 	e.Logger.Fatal(e.Start(portString))
 }
