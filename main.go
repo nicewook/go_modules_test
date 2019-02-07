@@ -12,7 +12,7 @@ func main() {
 
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, Go Modules! Hello, Travis-CI! Hello, Heroku!")
+		return c.String(http.StatusOK, "Test Complete")
 	})
 
 	port := os.Getenv("PORT")
