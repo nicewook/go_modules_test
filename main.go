@@ -2,6 +2,7 @@
 package main // import "github.com/nicewook/go_modules_test"
 
 import (
+	"log"
 	"net/http"
 	"os"
 
@@ -12,13 +13,13 @@ func main() {
 
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Test Complete")
+		return c.String(http.StatusOK, "Hello justHS!")
 	})
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "1323"
+		port = "8080"
 	}
-	portString := ":" + port
-	e.Logger.Fatal(e.Start(portString))
+	log.Printf("[MAIN] Server is running at 0.0.0.0:%v\n", port)
+	log.Println("[MAIN]", e.Start(":"+port))
 }
