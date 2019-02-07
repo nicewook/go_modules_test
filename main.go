@@ -2,7 +2,9 @@
 package main // import "github.com/nicewook/go_modules_test"
 
 import (
+	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/labstack/echo"
 )
@@ -10,10 +12,13 @@ import (
 func main() {
 
 	e := echo.New()
-
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, Go Modules! Hello, Travis-CI! Hello, Heroku!")
 	})
 
-	e.Logger.Fatal(e.Start(":1323"))
+	port := os.Getenv("PORT")
+	if port == "" {
+		fmt.Errorf("$PORT not set")
+	}
+	e.Logger.Fatal(e.Start(port))
 }
