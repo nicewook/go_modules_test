@@ -2,6 +2,7 @@
 package main // import "github.com/nicewook/go_modules_test"
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -14,6 +15,12 @@ func main() {
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello justHS!")
+	})
+
+	// slack post print
+	e.POST("/slack_slash_command", func(c echo.Context) error {
+		fmt.Println(c)
+		return c.String(http.StatusOK, "Well received!")
 	})
 
 	port := os.Getenv("PORT")
