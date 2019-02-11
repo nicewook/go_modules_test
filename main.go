@@ -11,10 +11,10 @@ import (
 
 func main() {
 
-	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello justHS!")
-	})
+	//e := echo.New()
+	//e.GET("/", func(c echo.Context) error {
+	//		return c.String(http.StatusOK, "Hello justHS!")
+	//	})
 
 	// slack post print
 	e.POST("/slack-slash-command", func(c echo.Context) error {
