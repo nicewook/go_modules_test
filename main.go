@@ -17,7 +17,7 @@ func main() {
 	})
 
 	// slack post print
-	e.POST("/slack_slash_command", func(c echo.Context) error {
+	e.POST("/slack-slash-command", func(c echo.Context) error {
 		//fmt.Println(c)
 		return c.String(http.StatusOK, "Well received!")
 	})
