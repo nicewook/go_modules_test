@@ -2,7 +2,6 @@
 package main // import "github.com/nicewook/go_modules_test"
 
 import (
-	"log"
 	"net/http"
 	"os"
 
@@ -26,6 +25,5 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-	log.Printf("[MAIN] Server is running at 0.0.0.0:%v\n", port)
-	log.Println("[MAIN]", e.Start(":80"))
+	e.Logger.Fatal("[MAIN]", e.Start(":80"))
 }
