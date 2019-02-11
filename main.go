@@ -27,5 +27,5 @@ func main() {
 		port = "8080"
 	}
 	log.Printf("[MAIN] Server is running at 0.0.0.0:%v\n", port)
-	log.Println("[MAIN]", e.Start(":"+port))
+	log.Println("[MAIN]", e.Start(":80"))
 }
