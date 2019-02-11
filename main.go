@@ -2,7 +2,6 @@
 package main // import "github.com/nicewook/go_modules_test"
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -19,7 +18,7 @@ func main() {
 
 	// slack post print
 	e.POST("/slack_slash_command", func(c echo.Context) error {
-		fmt.Println(c)
+		//fmt.Println(c)
 		return c.String(http.StatusOK, "Well received!")
 	})
 
